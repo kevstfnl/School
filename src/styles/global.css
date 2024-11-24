@@ -1,0 +1,221 @@
+@import "components/inputs.css";
+@import "components/bouttons.css";
+@import "components/loader.css";
+
+:root {
+    --bg-dark-1: hsl(220, 20%, 5%);
+    --bg-dark-2: hsl(220, 20%, 15%);
+    --bg-dark-3: hsl(220, 20%, 20%);
+    --bg-dark-4: hsl(220, 20%, 25%);
+    --bg-dark-5: hsl(220, 20%, 30%);
+    --bg-light-1: hsl(220, 20%, 75%);
+    --bg-light-2: hsl(220, 20%, 80%);
+    --bg-light-3: hsl(220, 20%, 85%);
+    --bg-light-4: hsl(220, 20%, 90%);
+    --bg-light-5: hsl(220, 20%, 95%);
+
+    --red-dark-1: hsl(0, 60%, 30%);
+    --red-dark-2: hsl(0, 60%, 35%);
+    --red-dark-3: hsl(0, 60%, 40%);
+    --red-dark-4: hsl(0, 60%, 45%);
+    --red-dark-5: hsl(0, 60%, 50%);
+    --red-light-1: hsl(0, 50%, 50%);
+    --red-light-2: hsl(0, 55%, 55%);
+    --red-light-3: hsl(0, 60%, 60%);
+    --red-light-4: hsl(0, 65%, 65%);
+    --red-light-5: hsl(0, 70%, 70%);
+
+
+    --orange-dark-1: hsl(45, 59%, 30%);
+    --orange-dark-2: hsl(45, 60%, 35%);
+    --orange-dark-3: hsl(45, 60%, 40%);
+    --orange-dark-4: hsl(45, 60%, 45%);
+    --orange-dark-5: hsl(45, 60%, 50%);
+
+    --orange-light-1: hsl(45, 50%, 50%);
+    --orange-light-2: hsl(45, 55%, 55%);
+    --orange-light-3: hsl(45, 60%, 60%);
+    --orange-light-4: hsl(45, 65%, 65%);
+    --orange-light-5: hsl(45, 70%, 70%);
+
+    --green-dark-1: hsl(140, 59%, 30%);
+    --green-dark-2: hsl(140, 60%, 35%);
+    --green-dark-3: hsl(140, 60%, 40%);
+    --green-dark-4: hsl(140, 60%, 45%);
+    --green-dark-5: hsl(140, 60%, 50%);
+
+    --green-light-1: hsl(140, 50%, 50%);
+    --green-light-2: hsl(140, 55%, 55%);
+    --green-light-3: hsl(140, 60%, 60%);
+    --green-light-4: hsl(140, 65%, 65%);
+    --green-light-5: hsl(140, 70%, 70%);
+}
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.5;
+    transition: color 250ms, background-color 250ms;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    color: var(--text-1);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.text-red {
+    color: var(--red-1) !important;
+}
+
+.text-orange {
+    color: var(--orange-1) !important;
+}
+
+.text-green {
+    color: var(--green-1) !important;
+}
+
+.bg-red {
+    background-color: var(--red-1) !important;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1em;
+    padding: 1em;
+    border-radius: 16px;
+    background-color: var(--bg-2);
+    color: var(--text-2);
+}
+
+html:not(.dark) {
+    --bg-1: var(--bg-light-1);
+    --bg-2: var(--bg-light-2);
+    --bg-3: var(--bg-light-3);
+    --bg-4: var(--bg-light-4);
+    --bg-5: var(--bg-light-5);
+    --text-1: var(--bg-dark-1);
+    --text-2: var(--bg-dark-2);
+    --text-3: var(--bg-dark-3);
+    --text-4: var(--bg-dark-4);
+    --text-5: var(--bg-dark-5);
+    --red-1: var(--red-light-1);
+    --red-2: var(--red-light-2);
+    --red-3: var(--red-light-3);
+    --red-4: var(--red-light-4);
+    --red-5: var(--red-light-5);
+    --orange-1: var(--orange-light-1);
+    --orange-2: var(--orange-light-2);
+    --orange-3: var(--orange-light-3);
+    --orange-4: var(--orange-light-4);
+    --orange-5: var(--orange-light-5);
+    --green-1: var(--green-light-1);
+    --green-2: var(--green-light-2);
+    --green-3: var(--green-light-3);
+    --green-4: var(--green-light-4);
+    --green-5: var(--green-light-5);
+}
+
+html:is(.dark) {
+    --bg-1: var(--bg-dark-1);
+    --bg-2: var(--bg-dark-2);
+    --bg-3: var(--bg-dark-3);
+    --bg-4: var(--bg-dark-4);
+    --bg-5: var(--bg-dark-5);
+    --text-1: var(--bg-light-1);
+    --text-2: var(--bg-light-2);
+    --text-3: var(--bg-light-3);
+    --text-4: var(--bg-light-4);
+    --text-5: var(--bg-light-5);
+    --red-1: var(--red-dark-1);
+    --red-2: var(--red-dark-2);
+    --red-3: var(--red-dark-3);
+    --red-4: var(--red-dark-4);
+    --red-5: var(--red-dark-5);
+    --orange-1: var(--orange-dark-1);
+    --orange-2: var(--orange-dark-2);
+    --orange-3: var(--orange-dark-3);
+    --orange-4: var(--orange-dark-4);
+    --orange-5: var(--orange-dark-5);
+    --green-1: var(--green-dark-1);
+    --green-2: var(--green-dark-2);
+    --green-3: var(--green-dark-3);
+    --green-4: var(--green-dark-4);
+    --green-5: var(--green-dark-5);
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--bg-1);
+}
+
+#app {
+    display: grid;
+    grid-template-rows: 100px 1fr 150px;
+    min-height: 100svh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 2em;
+    background-color: var(--bg-2);
+    color: var(--text-2);
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    background-color: var(--bg-2);
+    color: var(--text-2);
+
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        width: 100%;
+
+        .f-socials ul {
+            display: flex;
+            gap: 1em;
+        }
+    }
+}
+
+@media (min-width: 640px) {
+    footer {
+        flex-direction: row;
+
+        div {
+            width: 100%;
+
+            .f-socials ul {
+                display: flex;
+                gap: 1em;
+            }
+        }
+    }
+}

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Panel d'administration de l'ecole">
+    <script type="module" src="/src/pages/student/main.js" defer></script>
+    <link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/src/styles/student.css">
+    <title>School</title>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <h1>Nom École</h1>
+            <div class="h-btns">
+                <button id="toggleTheme" class="theme-button"></button>
+            </div>
+        </header>
+
+        <main>
+            <section class="back box">
+                <a id="backLink" href="/index.html" class="btn orange">Retour</a>
+            </section>
+            <section class="profile box">
+                <div class="img-contaier">
+                    <img src="/public/profile.png" alt="Photo de l'élève" id="avatar">
+                </div>
+                <div class="info">
+                    <p>Nom: <strong id="name"></strong></p>
+                    <p>Prenom: <strong id="lastName"></strong></p>
+                    <p>Age: <strong id="age"></strong></p>
+                    <p>Promotion: <strong id="promo"></strong></p>
+                </div>
+                <button class="btn red">Supprimer</button>
+            </section>
+            <section class="edit box">
+                <h2>Modification de l'élève:</h2>
+                <form action="">
+                    <div class="input-text-container">
+                        <input type="text" id="studentFirstNameInput" placeholder="">
+                        <label for="studentFirstNameInput">Prénom:</label>
+                    </div>
+                    <div class="input-text-container">
+                        <input type="text" id="studentLastNameInput" placeholder="">
+                        <label for="studentLastNameInput">Nom:</label>
+                    </div>
+                    <div class="input-text-container">
+                        <input type="text" id="studentAgeInput" placeholder="">
+                        <label for="studentAgeInput">Age:</label>
+                    </div>
+                    <div class="input-file-container">
+                        <p>Photo (optionnel):</p>
+                        <input type="file" id="studentAvatarInput">
+                        <label for="studentAvatarInput">Choisir un fichier...</label>
+                    </div>
+                </form>
+                <div class="btns">
+                    <button type="button" class="btn green" id="editStudent">Modifier</button>
+                </div>
+                <p id="editStudentState" class="hidden"></p>
+            </section>
+        </main>
+
+        <footer>
+            <div>
+                <h2>Autheur</h2>
+                <p>Stefanelli Kein</p>
+            </div>
+            <div>
+                <h2>Reseaux</h2>
+                <div class="f-socials">
+                    <ul>
+                        <li><a href="#">Linkedin</a></li>
+                        <li><a href="#">Github</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

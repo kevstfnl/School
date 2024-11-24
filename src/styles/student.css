@@ -1,0 +1,57 @@
+@import "global.css";
+
+main {
+    display: grid;
+    grid-template-areas: "b" "p" "e";
+    grid-template-rows: 50px 1fr auto;
+    gap: 1em;
+    padding: 1em;
+}
+
+.back {
+    grid-area: b;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.profile {
+    grid-area: p;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .info {
+        flex: 1;
+        width: 80%;
+    }
+
+    img {
+        border-radius: 24px;
+    }
+}
+
+.edit {
+    grid-area: e;
+    display: flex;
+    justify-content: space-between;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .btns {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (min-width: 604px) {
+    main {
+        grid-template-areas: "b e" "p e";
+        grid-template-rows: 50px auto;
+        grid-template-columns: 1fr 2fr;
+    }
+}

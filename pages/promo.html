@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Panel d'administration de l'ecole">
+    <script type="module" src="/src/pages/promo/main.js" defer></script>
+    <link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/src/styles/promo.css">
+    <title>School</title>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <h1>Nom École</h1>
+            <div class="h-btns">
+                <button id="toggleTheme" class="theme-button"></button>
+            </div>
+        </header>
+
+        <main>
+            <section class="back box">
+                <a href="/index.html" class="btn orange">Retour</a>
+            </section>
+            <section class="promo box">
+                <h2 id="promoTitle">Promotion:</h2>
+                <form action="">
+                    <div class="input-text-container">
+                        <input type="text" id="promoNameInput" placeholder="">
+                        <label for="promoNameInput">Nom de la promotion:</label>
+                    </div>
+                    <div class=" input-text-container">
+                        <input type="text" id="promoDescInput" placeholder="">
+                        <label for="promoDescInput">Description:</label>
+                    </div>
+                    <div class="input-date-container">
+                        <label for="dateStart">Debut:</label>
+                        <input type="date" name="date" id="dateStart" />
+                    </div>
+                    <div class="input-date-container">
+                        <label for="dateEnd">Fin:</label>
+                        <input type="date" name="date" id="dateEnd" />
+                    </div>
+                    <div class="btns">
+                        <button type="button" class="btn red" id="deletePromo">Supprimer</button>
+                        <button type="button" class="btn green" id="editPromo">Modifier</button>
+                    </div>
+                </form>
+                <p id="editPromoState" class="hidden"></p>
+            </section>
+            <section class="students box">
+                <h2>Étudiants:</h2>
+                <p id="noPromo">Il n'y a pas encore d'élèves dans cette promotion.</p>
+                <ul id="studentList" class="students-list">
+                    <template id="studentTemplate">
+                        <li>
+                            <a href="#" class="student-card">
+                                <div class="image-container">
+                                    <img src="/public/profile.png" alt="Profile" class="student-img">
+                                </div>
+                                <p class="student-name">Nom - Prenom</p>
+                                <p class="overlay">Modifier</p>
+                            </a>
+                        </li>
+                    </template>
+                </ul>
+                <div class="student-btn-container">
+                    <button class="btn green" id="openNewStudentMenu">Ajouter un étudiant</button>
+                </div>
+            </section>
+        </main>
+
+        <div class="add-student-menu" id="addStudentMenu">
+            <section>
+                <h2>Ajout d'un élève:</h2>
+                <form id="studentMenuForm">
+                    <div class="input-text-container">
+                        <input type="text" id="newStudentFirstNameInput" placeholder="">
+                        <label for="newStudentFirstNameInput">Prénom:</label>
+                    </div>
+                    <div class="input-text-container">
+                        <input type="text" id="newStudentLastNameInput" placeholder="">
+                        <label for="newStudentLastNameInput">Nom:</label>
+                    </div>
+                    <div class="input-text-container">
+                        <input type="text" id="newStudentAgeInput" placeholder="">
+                        <label for="newStudentAgeInput">Age:</label>
+                    </div>
+                    <div class="input-file-container">
+                        <p>Photo (optionnel):</p>
+                        <input type="file" id="newStudentAvatarInput">
+                        <label for="newStudentAvatarInput">Choisir un fichier...</label>
+
+                    </div>
+                    <div class="btns">
+                        <button type="button" class="btn orange" id="backToMain">Annuler</button>
+                        <button type="button" class="btn green" id="addStudentButton">Ajouter</button>
+                    </div>
+                </form>
+                <p id="studentMenuStateMessage" class="student-menu-message hidden"></p>
+                <div class="loader hidden" id="studentMenuLoader"></div>
+            </section>
+        </div>
+
+        <footer>
+            <div>
+                <h2>Autheur</h2>
+                <p>Stefanelli Kein</p>
+            </div>
+            <div>
+                <h2>Reseaux</h2>
+                <div class="f-socials">
+                    <ul>
+                        <li><a href="#">Linkedin</a></li>
+                        <li><a href="#">Github</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

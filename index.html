@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Panel d'administration de l'ecole">
+  <script type="module" src="src/pages/index/main.js" defer></script>
+  <link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="src/styles/index.css">
+  <title>School</title>
+</head>
+
+<body>
+  <div id="app">
+    <header>
+      <h1 id="title">Nom École</h1>
+      <div class="h-btns">
+        <button id="toggleTheme" class="theme-button"></button>
+      </div>
+    </header>
+    <main>
+      <section class="desc box">
+        <h2>Bienvenue !</h2>
+        <article class="desc-text">
+          <p>Depuis ce panel, vous pouvez administer (créer, supprimer, modifier):</p>
+          <ul>
+            <li>Votre ecole</li>
+            <li>Les promotions</li>
+            <li>Et leurs etudiants</li>
+          </ul>
+        </article>
+      </section>
+      <section class="edit box">
+        <h2>Mon ecole:</h2>
+        <div class="loader" id="statsLoader"></div>
+        <div id="statsContainer" class="stats-container hidden">
+          <h3>Statistiques:</h3>
+          <article id="stats" class="stats">
+            <div>
+              <h4>Promotion:</h4>
+              <div class="stats-text">
+                <p>Promotions: <strong id="statsPromos" class="stat-value">0</strong></p>
+                <p>Promotions en cours: <strong id="statsCurPromos" class="stat-value">0</strong></p>
+                <p>Promotions en attentes: <strong id="statsWaitPromos" class="stat-value">0</strong></p>
+              </div>
+            </div>
+            <div>
+              <h4>Élèves:</h4>
+              <div class="stats-text">
+                <p>Élèves: <strong id="statsStudent" class="stat-value">0</strong></p>
+                <p>Élèves en cours: <strong id="statsCurStudent" class="stat-value">0</strong></p>
+                <p>Élèves en attentes: <strong id="statsWaitStudent" class="stat-value">0</strong></p>
+                <p>Élève par promotion: <strong id="statsStudentAverage" class="stat-value">0</strong></p>
+              </div>
+            </div>
+          </article>
+        </div>
+        <form class="edit-school-form">
+          <div class="input-text-container">
+            <input type="text" id="schoolNameInput" placeholder="">
+            <label for="schoolNameInput">Nom de l'ecole:</label>
+          </div>
+          <button type="button" id="editSchool" class="btn green">Modifier</button>
+        </form>
+      </section>
+      <section class="promos box">
+        <h2>Promotions:</h2>
+        <div class="promos-container">
+          <p id="noPromo" class="no-promo hidden">Vous n'avez pas encore de promotion !</p>
+          <div class="loader" id="promoLoader"></div>
+          <ul id="promosList" class="promo-list hidden">
+            <template id="promosCardsTemplate">
+              <li class="card-container">
+                <a href="" class="card">
+                  <p class="promo-name">Nom de la promo</p>
+                  <p class="promo-date">Date de debut ou fin de la promo</p>
+                  <p class="card-overlay">Modifier</p>
+                </a>
+                <div class="card-effect wait"></div>
+              </li>
+            </template>
+          </ul>
+        </div>
+        <button id="togglePromotionMenuButton" class="btn green">Ajouter une nouvelle promotion</button>
+      </section>
+    </main>
+
+
+
+
+    <div class="add-promo-menu" id="addPromoMenu">
+      <section>
+        <h2>Ajout de promotion:</h2>
+        <form id="promoMenuForm">
+          <div class="input-text-container">
+            <input type="text" id="newPromoNameInput" placeholder="">
+            <label for="newPromoNameInput">Nom de la promotion:</label>
+          </div>
+          <div class="input-text-container">
+            <input type="text" id="newPromoDescInput" placeholder="">
+            <label for="newPromoDescInput">Description:</label>
+          </div>
+          <div class="input-date-container">
+            <label for="dateStart">Date de debut:</label>
+            <input type="date" name="date" id="dateStart" />
+          </div>
+          <div class="input-date-container">
+            <label for="dateEnd">Date de fin:</label>
+            <input type="date" name="date" id="dateEnd" />
+          </div>
+
+          <div class="btns">
+            <button type="button" class="btn orange" id="backToMain">Annuler</button>
+            <button type="button" class="btn green" id="addPromotionButton">Ajouter</button>
+          </div>
+        </form>
+        <p id="promoMenuStateMessage" class="promo-menu-message hidden"></p>
+        <div class="loader hidden" id="promoMenuLoader"></div>
+
+      </section>
+    </div>
+
+
+
+
+
+    <footer>
+      <div>
+        <h2>Autheur:</h2>
+        <p>Stefanelli Kein</p>
+      </div>
+      <div>
+        <h2>Réseaux:</h2>
+        <div class="f-socials">
+          <ul>
+            <li><a href="#">Linkedin</a></li>
+            <li><a href="#">Github</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>

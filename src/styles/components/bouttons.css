@@ -1,0 +1,82 @@
+.theme-button {
+    position: relative;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    border: none;
+    background-color: yellow;
+    transition: background-color 250ms, scale 250ms;
+
+    &:hover {
+        scale: 1.2;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        height: 25px;
+        width: 25px;
+        top: 0;
+        border-radius: 50%;
+        background-color: var(--bg-2);
+        transform-origin: right;
+        transform: scale(0);
+        transition: transform 250ms, background-color 250ms;
+
+    }
+}
+
+html.dark .theme-button {
+    background-color: white;
+
+    &::after {
+        transform: scale(100%);
+    }
+}
+
+.btn {
+    padding: 1.2em;
+    line-height: 0;
+    height: fit-content;
+    width: fit-content;
+    border-radius: 8px;
+    border: 3px transparent solid;
+    background-color: var(--bg-3);
+    color: var(--text-3);
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: border-color 150ms, background 250ms;
+
+    &.green {
+        background-color: var(--green-1);
+    }
+
+    &.orange {
+        background-color: var(--orange-1);
+    }
+
+    &.red {
+        background-color: var(--red-1);
+    }
+
+    &:hover {
+        border-color: var(--bg-5);
+        background-color: var(--bg-4);
+
+        &.green {
+            border-color: var(--green-5);
+            background-color: var(--green-3);
+        }
+
+        &.orange {
+            border-color: var(--orange-5);
+            background-color: var(--orange-3);
+        }
+
+        &.red {
+            border-color: var(--red-5);
+            background-color: var(--red-3);
+        }
+
+    }
+}

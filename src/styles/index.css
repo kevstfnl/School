@@ -1,0 +1,172 @@
+@import "global.css";
+@import "components/card.css";
+
+main {
+    display: grid;
+    grid-template-areas: "d" "e" "p";
+    grid-template-rows: 1fr 1fr auto;
+    padding: 1em;
+    gap: 1em;
+}
+
+.desc {
+    grid-area: "d";
+    justify-content: start;
+
+    .desc-text {
+        margin: 1em;
+    }
+
+    ul {
+        margin-block: 1em;
+        list-style: inside;
+    }
+}
+
+.edit {
+    grid-area: "e";
+    justify-content: start;
+
+    .stats {
+        display: flex;
+        flex-direction: column;
+        margin: 1em;
+        gap: 3em;
+
+        .stats-text {
+            margin: 0.5em;
+        }
+    }
+
+    .edit-school-form {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        div {
+            flex: 1;
+        }
+    }
+}
+
+.promos {
+    align-items: center;
+    grid-area: "p";
+}
+
+.card {
+    &.bg-orange .promo-name {
+        color: var(--orange-3);
+    }
+
+    &.bg-green .promo-name {
+        color: var(--green-3);
+    }
+
+    .promo-name {
+        font-weight: 700;
+    }
+}
+
+
+.promo-date {
+    color: var(--text-3);
+}
+
+.promo-list {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.add-promo-menu.active {
+    scale: 1;
+    backdrop-filter: blur(10px);
+}
+
+.add-promo-menu {
+    position: fixed;
+    z-index: 10;
+    height: 100svh;
+    width: 100svw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    scale: 0;
+    backdrop-filter: blur(0);
+    transition: scale 250ms, backdrop-filter 1s;
+
+    section {
+        background-color: var(--bg-2);
+        padding: 1em;
+        border-radius: 16px;
+        box-shadow: black 0 0 10px;
+        color: var(--text-2);
+        max-width: 100svw;
+        width: 500px;
+
+        h2 {
+            margin-block: 1em;
+        }
+
+        .promo-menu-message {
+            width: 100%;
+            text-wrap: wrap;
+            color: var(--green-1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            padding: 1em;
+            gap: 24px;
+
+            .input-date-container {
+                flex-direction: column;
+
+                input {
+                    width: 100%;
+                }
+            }
+
+            .btns {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                button {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+
+@media (min-width: 640px) {
+    main {
+        grid-template-areas: "d e" "p p";
+        grid-template-columns: 1fr auto;
+        grid-template-rows: 1fr auto;
+    }
+
+    .promos {
+        grid-column: span 2;
+    }
+
+    .box {
+        padding: 2em;
+    }
+
+    .edit .stats {
+        flex-direction: row;
+    }
+
+
+    .add-promo-menu section form .input-date-container {
+        flex-direction: row;
+    }
+}

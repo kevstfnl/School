@@ -1,0 +1,20 @@
+.loader {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 10px solid transparent;
+    border-top: 10px solid lightseagreen;
+    margin: auto;
+    animation: spin 1s infinite ease;
+
+}
+
+@keyframes spin {
+    from {
+        rotate: 0deg;
+    }
+
+    to {
+        rotate: 360deg;
+    }
+}

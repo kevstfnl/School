@@ -1,0 +1,162 @@
+@import "global.css";
+
+main {
+    display: grid;
+    grid-template-areas: "b" "p" "s";
+    grid-template-rows: 50px 1fr auto;
+    padding: 1em;
+    gap: 1em;
+}
+
+.back {
+    grid-area: b;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.students {
+    grid-area: s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .student-btn-container {
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
+.promo {
+    grid-area: p;
+    padding: 1em;
+    justify-content: space-around;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5em;
+
+        .btns {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+        }
+    }
+}
+
+.students-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+
+    li {
+        height: fit-content;
+    }
+}
+
+.student-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--bg-3);
+    padding: 1em;
+    border: 5px solid transparent;
+    border-radius: 16px;
+    width: 250px;
+    transition: border 250ms;
+
+    .image-container {
+        height: 64px;
+        transition: scale 250ms;
+
+        img {
+            height: 100%;
+        }
+    }
+
+    .overlay {
+        opacity: 0;
+        transition: opacity 250ms;
+    }
+
+    &:hover {
+        border: 5px solid var(--bg-4);
+
+        .image-container {
+            scale: 1.2;
+        }
+
+        .overlay {
+            opacity: 1;
+        }
+    }
+}
+
+.add-student-menu.active {
+    scale: 1;
+    backdrop-filter: blur(10px);
+}
+
+.add-student-menu {
+    position: fixed;
+    z-index: 10;
+    height: 100svh;
+    width: 100svw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    scale: 0;
+    backdrop-filter: blur(0);
+    transition: scale 250ms, backdrop-filter 1s;
+
+    section {
+        background-color: var(--bg-2);
+        padding: 1em;
+        border-radius: 16px;
+        box-shadow: black 0 0 10px;
+        color: var(--text-2);
+        max-width: 100svw;
+        width: 500px;
+
+        h2 {
+            margin-block: 1em;
+        }
+
+        .student-menu-message {
+            max-width: 300px;
+            color: var(--green-1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+
+            .btns {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                button {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+
+@media (min-width: 640px) {
+    main {
+        grid-template-areas: "b s" "p s";
+        grid-template-rows: 50px auto;
+        grid-template-columns: 1fr 2fr;
+    }
+}
